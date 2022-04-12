@@ -8,7 +8,7 @@
       <link href="/2022/04/12/wo-de-di-yi-pian-bo-ke/"/>
       <url>/2022/04/12/wo-de-di-yi-pian-bo-ke/</url>
       
-        <content type="html"><![CDATA[<p>-–</p><p>title: 我的第一篇博客</p><p>date: 2022-04-12 20:48:40</p><p>tags:</p><p>-–</p><p>从<mark>4月10号到4月12</mark>号，忙活了三天，从无到有，个人博客终于搭建好了，采用hexo架构，matery主题。</p><p>4月10号进行了域名注册，4月11号在github部署，12号采用和coding搭配双线部署。</p><p>在这里感谢<a href="">yzyyz.top</a>,从他那里获得了创作个人博客的灵感。</p><p>那么从现在开始敲下第一个代码</p><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"hello world"</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>-–</p>]]></content>
+        <content type="html"><![CDATA[<p>-–</p><p>title: 我的第一篇博客</p><p>date: 2022-04-12 20:48:40</p><p>tags:</p><p>-–</p><p>从<mark>4月10号到4月12</mark>号，忙活了三天，从无到有，个人博客终于搭建好了，采用hexo架构，matery主题。</p><p>4月10号进行了域名注册，4月11号在github部署，12号采用和coding搭配双线部署。</p><p>在这里感谢<a href="yzyyz.top">幼稚园园长</a>,从他那里获得了创作个人博客的灵感。</p><p>那么从现在开始敲下第一个代码</p><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"hello world"</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>-–</p>]]></content>
       
       
       
