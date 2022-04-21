@@ -5,6 +5,25 @@
     
     <entry>
       <title>我的第一篇博客</title>
+      <link href="/2022/04/19/fortran-bian-yi-qi-de-an-zhuang/"/>
+      <url>/2022/04/19/fortran-bian-yi-qi-de-an-zhuang/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Fortran编译器的安装"><a href="#Fortran编译器的安装" class="headerlink" title="Fortran编译器的安装"></a><center>Fortran编译器的安装</center></h1><p>今天应舍友要求给他安了<mark>Fortran编译器</mark>（其实要求我很长时间了，不过一直没重视），当时安了几次，都以失败告终，我索性叫他在线编译😜，但是在线编译没有错误提示，对小白也不友好，用了几次他说并不好，于是我稍微鼓捣了一下Fortran。</p><p>废话不多说，查找了很多安装编译器的方法，比如vs安装插件，但是发现对于我这样的小白来说简单的一步到位的就是安装CodeBlocks编译器，步骤如下：</p><h3 id="第一步：下载CodeBlock"><a href="#第一步：下载CodeBlock" class="headerlink" title="第一步：下载CodeBlock"></a>第一步：下载CodeBlock</h3><p>链接：<a href="https://pan.baidu.com/s/1mkROUMxk_8l-8Tfxtm509g">https://pan.baidu.com/s/1mkROUMxk_8l-8Tfxtm509g </a></p><p>提取码：yygd</p><p><mark>注：此版本只能编译Fortran</mark></p><h3 id="第二步：安装"><a href="#第二步：安装" class="headerlink" title="第二步：安装"></a>第二步：安装</h3><p>全程下一步，没有难度</p><h3 id="第三步：软件汉化"><a href="#第三步：软件汉化" class="headerlink" title="第三步：软件汉化"></a>第三步：软件汉化</h3><h6 id="首先下载汉化补丁"><a href="#首先下载汉化补丁" class="headerlink" title="首先下载汉化补丁"></a>首先下载汉化补丁</h6><p>链接：<a href="https://pan.baidu.com/s/1BgDeevIGH3eSQMwB3_tLBg.">https://pan.baidu.com/s/1BgDeevIGH3eSQMwB3_tLBg </a></p><p>下载完，将这个文件<mark>解压后</mark>，粘贴在下面的目录：&nbsp;</p><p><img src="/../image/Fortran%E7%BC%96%E8%AF%91%E5%99%A8%E7%9A%84%E5%AE%89%E8%A3%85/1.png"></p><h6 id="之后就是配置汉语环境"><a href="#之后就是配置汉语环境" class="headerlink" title="之后就是配置汉语环境"></a>之后就是配置汉语环境</h6><p>按下列顺序操作即可：</p><p><img src="/../image/Fortran%E7%BC%96%E8%AF%91%E5%99%A8%E7%9A%84%E5%AE%89%E8%A3%85/2.png" alt="屏幕截图 2022-04-21 191108"></p><p><img src="/../image/Fortran%E7%BC%96%E8%AF%91%E5%99%A8%E7%9A%84%E5%AE%89%E8%A3%85/3.png" alt="QQ截图20220421191335"></p><p><img src="/../image/Fortran%E7%BC%96%E8%AF%91%E5%99%A8%E7%9A%84%E5%AE%89%E8%A3%85/4.png" alt="QQ截图20220421191521"><br><img src="/../image/Fortran%E7%BC%96%E8%AF%91%E5%99%A8%E7%9A%84%E5%AE%89%E8%A3%85/5.png" alt="QQ截图202204211915255"></p><h3 id="第四步：配置"><a href="#第四步：配置" class="headerlink" title="第四步：配置"></a>第四步：配置</h3><p>点击”设置“下的”编译器“</p><p><img src="/../image/Fortran%E7%BC%96%E8%AF%91%E5%99%A8%E7%9A%84%E5%AE%89%E8%A3%85/6.png" alt="屏幕截图 2022-04-21 192118"></p><p><img src="/../image/Fortran%E7%BC%96%E8%AF%91%E5%99%A8%E7%9A%84%E5%AE%89%E8%A3%85/7.png" alt="QQ截图20220421192331"></p><p>在”可执行工具链“核对一下是否对应</p><p><img src="/../image/Fortran%E7%BC%96%E8%AF%91%E5%99%A8%E7%9A%84%E5%AE%89%E8%A3%85/8.png" alt="QQ截图20220421192419"></p><h6 id="到此配置完毕！"><a href="#到此配置完毕！" class="headerlink" title="到此配置完毕！"></a>到此配置完毕！</h6><h3 id="第五步：创建项目"><a href="#第五步：创建项目" class="headerlink" title="第五步：创建项目"></a>第五步：创建项目</h3><p>emmm，按图片顺序来吧</p><p><img src="/../image/Fortran%E7%BC%96%E8%AF%91%E5%99%A8%E7%9A%84%E5%AE%89%E8%A3%85/9.png" alt="QQ截图20220421192751"></p><p><img src="/../image/Fortran%E7%BC%96%E8%AF%91%E5%99%A8%E7%9A%84%E5%AE%89%E8%A3%85/10.png" alt="QQ截图20220421192808"><img src="/../image/Fortran%E7%BC%96%E8%AF%91%E5%99%A8%E7%9A%84%E5%AE%89%E8%A3%8511.png" alt="QQ截图20220421192838"></p><p><img src="/../image/Fortran%E7%BC%96%E8%AF%91%E5%99%A8%E7%9A%84%E5%AE%89%E8%A3%85/12.png" alt="QQ截图20220421192846"></p><p><img src="/../image/Fortran%E7%BC%96%E8%AF%91%E5%99%A8%E7%9A%84%E5%AE%89%E8%A3%85/13.png" alt="QQ截图20220421192917"></p><p><mark>到此创建完毕！！</mark></p><h6 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h6><p><img src="/../image/Fortran%E7%BC%96%E8%AF%91%E5%99%A8%E7%9A%84%E5%AE%89%E8%A3%85/14.png" alt="QQ截图20220421192954"></p><p>emmm，总之就是这样的了。。。</p><hr><p>参考链接</p><p><a href="https://zhuanlan.zhihu.com/p/81981805">Fortran简介与轻松+舒适的安装使用方法 - 知乎 (zhihu.com)</a></p><p><a href="https://zhuanlan.zhihu.com/p/52516459">使用Code::blocks编译Fortran - 知乎 (zhihu.com)</a></p><p>下边是vs安装参考</p><p><a href="https://blog.csdn.net/fiber_tape/article/details/121437914">https://blog.csdn.net/fiber_tape/article/details/121437914</a></p><p><a href="https://zhuanlan.zhihu.com/p/381304054">https://zhuanlan.zhihu.com/p/381304054</a></p><p>-–</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Fortran </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>我的第一篇博客</title>
       <link href="/2022/04/12/wo-de-di-yi-pian-bo-ke/"/>
       <url>/2022/04/12/wo-de-di-yi-pian-bo-ke/</url>
       
