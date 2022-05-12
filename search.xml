@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>Hexo搭建指南</title>
+      <link href="/post/4hexo-da-jian-zhi-nan/"/>
+      <url>/post/4hexo-da-jian-zhi-nan/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Hexo博客搭建指南"><a href="#Hexo博客搭建指南" class="headerlink" title="Hexo博客搭建指南"></a><center>Hexo博客搭建指南</center></h1><h4 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h4><ol><li><p>我为什么有搭建个人博客网站的想法？</p><p>一开始，我是有着写QQ机器人玩的想法，在了解过程中，无意间发现了<a href="https://yzyyz.top/">幼稚园园长</a>的写的关于Nonebot(开发QQrobot的一个工具)的博客，看见他写的博客感觉很不错，于是乎心血来潮，产生了搭建个人博客的想法。同时计算机界的大佬都有记笔记的习惯，算是想向大佬们看齐吧&nbsp;。</p></li><li><p>我为什么会用Hexo框架搭建博客？</p><p>网上有很多搭建博客的框架，如Wordpress，Hugo，Typecho，那我为什么首选了Hexo，当然是好看呀😋</p></li><li><p>在搭建Hexo之前要掌握哪些知识？</p><p>① 对Git和一些最基础指令有所了解：<a href="https://www.liaoxuefeng.com/wiki/896043488029600">文字教程参考</a>          <a href="https://www.bilibili.com/video/BV1FE411P7B3?spm_id_from=333.1007.top_right_bar_window_custom_collect">视频教程参考</a></p><p>② 如果你想要后期对博客进行魔改，那至少要掌握一点前端知识，<a href="https://www.runoob.com/w3cnote/yaml-intro.html">YAML语法</a></p><p>③ 不需要云服务器</p><p>④ 不喜欢瞎折腾慎入</p></li></ol><h2 id="一-注册GitHub账号"><a href="#一-注册GitHub账号" class="headerlink" title="一. 注册GitHub账号"></a>一. 注册GitHub账号</h2><p>这个很简单了，不用说了。</p><h2 id="二-安装Git"><a href="#二-安装Git" class="headerlink" title="二. 安装Git"></a>二. 安装Git</h2><p><a href="https://git-scm.com/">Git 官网</a>，如果你看了上边的Git教程，这个就会了。</p><h2 id="三-安装nodejs"><a href="#三-安装nodejs" class="headerlink" title="三. 安装nodejs"></a>三. 安装nodejs</h2><p>这个会安装就行了。</p><p>如果第二、三步过程实在不会，参照这个up主的教程<a href="https://www.bilibili.com/video/BV1cp4y1i7C7?spm_id_from=333.788.top_right_bar_window_custom_collection.content.click">【最全】教你如何用腾讯云服务器＋hexo 搭建属于自己的博客_哔哩哔哩_bilibili</a>，这个up主讲的就很细致，不过后边部署到腾讯云服务器的话目前我我不会，正在准备学Linux。。</p><h2 id="四-部署及预览博客"><a href="#四-部署及预览博客" class="headerlink" title="四. 部署及预览博客"></a>四. 部署及预览博客</h2><p>这个照着上边up主的做吧，毕竟谁愿意看空洞的文字叙述呢😋，这里只写一下部署命令，方便以后查询</p><p>初始化博客：</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">hexo init<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>生成内容：</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">hexo g<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>预览博客：</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">hexo s<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h2 id="五-创建GitHub仓库"><a href="#五-创建GitHub仓库" class="headerlink" title="五. 创建GitHub仓库"></a>五. 创建GitHub仓库</h2><p>注意仓库命名为<mark>用户名.github.io</mark></p><h2 id="六-生成SSH添加到Github仓库"><a href="#六-生成SSH添加到Github仓库" class="headerlink" title="六. 生成SSH添加到Github仓库"></a>六. 生成SSH添加到Github仓库</h2><p>回到你的git bash中（下边写的命令都是分开输入哟），</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> config --global user.name <span class="token string">"yourname"</span><span class="token function">git</span> config --global user.email <span class="token string">"youremail"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><p>这里的yourname输入你的GitHub用户名，youremail输入你GitHub的邮箱。这样GitHub才能知道你是不是对应它的账户。</p><p>可以用以下两条，检查一下你有没有输对：</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> config user.name<span class="token function">git</span> config user.email<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><p>然后创建SSH,一路回车</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">ssh-keygen -t rsa -C <span class="token string">"youremail"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>在C盘用户文件夹里找到.ssh文件</p><p>ssh，简单来讲，就是一个秘钥，其中，<mark>id_rsa</mark>是你这台电脑的私人秘钥，不能给别人看的，<mark>id_rsa.pub</mark>是公共秘钥，可以随便给别人看。把这个公钥放在GitHub上，这样当你链接GitHub自己的账户时，它就会根据公钥匹配你的私钥，当能够相互匹配时，才能够顺利的通过git上传你的文件到GitHub上。<br>然后把<mark>id_rsa.pub</mark>里边的信息贴在GitHub里边</p><p>然后再git窗口里边输如以下代码+yes</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">ssh</span> -T git@github.com<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>出现successfully字样即为成功，即已与GitHub建立了联系</p><p><em><strong>注：上边五、六部可参考这位up主<a href="https://www.bilibili.com/video/BV1mU4y1j72n?p=2">【2021最新版】保姆级Hexo+github搭建个人博客_哔哩哔哩_bilibili</a></strong></em></p><h2 id="七-部署到Github"><a href="#七-部署到Github" class="headerlink" title="七. 部署到Github"></a>七. 部署到Github</h2><p>这一步，我们就可以将hexo和GitHub关联起来，也就是将hexo生成的文章部署到GitHub上，打开站点配置文件&nbsp;<code>_config.yml</code>，翻到最后，修改为<br>YourgithubName就是你的GitHub账户</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">deploy:  type: <span class="token function">git</span>  repo: https://github.com/YourgithubName/YourgithubName.github.io.git  branch: master<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre><p>这个时候需要先安装deploy-git ，也就是部署的命令,这样你才能用命令部署到GitHub。</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> hexo-deployer-git --save<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>然后</p><pre class="line-numbers language-none"><code class="language-none">hexo cleanhexo generatehexo deploy<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><p>其中 hexo clean清除了你之前生成的东西，也可以不加。<br>hexo generate 顾名思义，生成静态文章，可以用 <mark>hexo g</mark>缩写<br>hexo deploy 部署文章，可以用<mark>hexo d</mark>缩写（第四条已写）</p><p>注意deploy时可能要你输入username和password。</p><p>得到下图就说明部署成功了，过一会儿就可以在<a href="http://yourname.github.io/">http://yourname.github.io</a> 这个网站看到你的博客了！！</p><p>基础搭建就讲到这了，参考链接也在文章中，我只是写了大致内容概况，等你自己学会搭建博客自然就知道了，至于如何自定义自己的博客域名，下次再说吧。</p><p><em>在三叮嘱：遇事不决问百度！遇事不决问百度！遇事不决问百度！</em></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Hexo </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Hexo </tag>
+            
+            <tag> 博客 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>白嫖工具</title>
       <link href="/post/3-bai-piao-gong-ju/"/>
       <url>/post/3-bai-piao-gong-ju/</url>
