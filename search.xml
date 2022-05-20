@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>前端入门总结</title>
+      <link href="/post/5-qian-duan-ru-men-zong-jie/"/>
+      <url>/post/5-qian-duan-ru-men-zong-jie/</url>
+      
+        <content type="html"><![CDATA[<h1 id="前端入门总结"><a href="#前端入门总结" class="headerlink" title="前端入门总结"></a><center>前端入门总结</center></h1><p>抱着学习Python爬虫的目的，本来想浅学一下HTML结构，发现它和CSS和JavaScript密不可分，而且维护目前这个博客也需要用到一些前端知识，索性把HTML，CSS，JavaScript都学习了一遍，算是个入门吧。</p><p>我是从<u>4月15号</u>在中国大学MOOC上学习的，中间番瘾上来追了几部番，然后疫情严重呆在宿舍学了一星期，摸滚带爬学到现在<u>5月20号</u>也告一段落了。6月1号就要放假了，还有很多考试没考，趁现在”忙里偷闲”为我的前端学习写个总结吧。</p><h2 id="HTML入门总结"><a href="#HTML入门总结" class="headerlink" title="HTML入门总结"></a>HTML入门总结</h2><p>HTML全称为超文本标记语言（Hyper Text Markup Language），跟我现在写的博客用的Markdown语言一样，都是标记语言。而Markdown兼容HTML，可以说学习HTML很重要了。学到现在我只记住了一些重要的HTML元素，已经能理清HTML文件的结构，其实学完HTML我的目的已经达到，但是到现在我已经对前端产生了兴趣。为了以后博客网站的维护，我决定把前端入门这节课上完。</p><h2 id="CSS入门总结"><a href="#CSS入门总结" class="headerlink" title="CSS入门总结"></a>CSS入门总结</h2><p>对于CSS来说，我的理解是，如果HTML只是一堆文字信息，那CSS就是为这些文字装饰的，让用户获得更好的视觉体验。学习CSS，我觉得我对CSS掌握的并不算好，毕竟是入门，课程所讲的内容还不是能满足实际的应用，实际中还要多加练习才能达到一定水平。尤其是CSS3这一块，一个3D旋转方向我都弄了好久才搞明白。在CSS中多种元素的搭配才能达到理想的效果，但我对这些搭配练习得还不熟练。</p><h2 id="JavaScript入门总结"><a href="#JavaScript入门总结" class="headerlink" title="JavaScript入门总结"></a>JavaScript入门总结</h2><p>JavaScript（简称“JS”） 是一种具有函数优先的轻量级，解释型或即时编译型的编程语言。基础部分它和C语言的语法很多都一样，于是我学的也很快。但到了DOM（Document Object Model）操作部分我就摸不到头脑了，老师也只讲个大概，课下我在菜鸟教程上学习了一点DOM操作语法，但是真正拿来用就又犯了难，如果有必要的话，以后可能还需要进一步学习这门语言。</p><h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>学完这些后，我希望自己写一个个人介绍页，发现对我这个小白来说真是上了一点难度。用HTML和CSS写个静态网页还好说，JavaScript我根本就不会写！用了几近百行代码，近一个上午中午写了个💩山之后，我决定打消这个念头，动用<mark>究极缝合怪</mark>的本事去开源网站上找个模板，之后魔改成自己的个人主页。这前端入门学完后，发现自己就学会个熟练套用HTML模板。嘛，目的已经达到，润了润了，继续下一步学习咯~~</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 前端 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> HTML </tag>
+            
+            <tag> CSS </tag>
+            
+            <tag> JavaScript </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Hexo搭建指南</title>
       <link href="/post/4hexo-da-jian-zhi-nan/"/>
       <url>/post/4hexo-da-jian-zhi-nan/</url>
