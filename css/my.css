@@ -12,12 +12,12 @@
         font-size: 1.5rem;
     }
 }
-body {
-    cursor: url(https://cdn.jsdelivr.net/gh/sviptzk/HexoStaticFile@latest/Hexo/img/default.cur),
+/* body {
+    cursor: url(../cursor1.png),
         default;
 }
-a,img,span,i {
-    cursor: url(https://cdn.jsdelivr.net/gh/sviptzk/HexoStaticFile@latest/Hexo/img/pointer.cur),
+a,img,span,i,li,span {
+    cursor: url(../cursor2.png),
         default;
-}
+} */
 
