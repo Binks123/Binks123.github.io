@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>我们一起学习</title>
+      <link href="/post/6-xue-xi-xiao-wu/"/>
+      <url>/post/6-xue-xi-xiao-wu/</url>
+      
+        <content type="html"><![CDATA[<p>得到我给你的kiwi browser（kiwi浏览器）安装包以后，可能它里边不是中文，不过在设置里边能调，不能调也没关系，看下边步骤就好了。</p><h3 id="①安装脚本"><a href="#①安装脚本" class="headerlink" title="①安装脚本"></a>①安装脚本</h3><p>1.下载我给你的welearn脚本包</p><p>2.打开kiwi浏览器，在下拉菜单里边选中扩展程序</p><p><img src="/../boketu/%E5%AD%A6%E4%B9%A0%E5%B0%8F%E5%B1%8B/0.jpg"></p><p>3.找到扩展包所在手机位置，如下</p><p><img src="/../boketu/%E5%AD%A6%E4%B9%A0%E5%B0%8F%E5%B1%8B/1.jpg"></p><p><img src="/../boketu/%E5%AD%A6%E4%B9%A0%E5%B0%8F%E5%B1%8B/2.jpg"></p><p><img src="/../boketu/%E5%AD%A6%E4%B9%A0%E5%B0%8F%E5%B1%8B/3.jpg"></p><p><img src="/../boketu/%E5%AD%A6%E4%B9%A0%E5%B0%8F%E5%B1%8B/4.jpg"></p><p>4.完成安装拓展包</p><p><img src="/../boketu/%E5%AD%A6%E4%B9%A0%E5%B0%8F%E5%B1%8B/5.jpg"></p><h3 id="②使用脚本"><a href="#②使用脚本" class="headerlink" title="②使用脚本"></a>②使用脚本</h3><p>因为这个浏览器属于洋软件，所以你的搜索引擎不能搜索到welearn官网，但是可以通过输入网址直接打开welearn官网，所以你只需要在搜索框中输入welearn网址<mark>welearn.sflep.com</mark>即可。</p><p>当打开这个网页以后脚本就自动打开啦（会给你提示的）！！！此时界面类似于电脑端，打开测试就能做了，welearnhelp的先悬浮窗会自动挂着，点击”查询”就会出来答案了。</p><h3 id="③最后"><a href="#③最后" class="headerlink" title="③最后"></a>③最后</h3><p>好多脚本的使用都是这个方法，想要获得更多脚本去谷歌crx插件商店。最后最后，不要过度依赖脚本，有些东西还是要自己完成的。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 后花园 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 学习的好帮手 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>前端入门总结</title>
       <link href="/post/5-qian-duan-ru-men-zong-jie/"/>
       <url>/post/5-qian-duan-ru-men-zong-jie/</url>
