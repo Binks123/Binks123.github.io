@@ -217,11 +217,25 @@
   <li class="hide-on-med-and-down nav-item">
     
     <a href="/leader" class="waves-effect waves-light">
+
       
       <i class="fas fa-gift" style="zoom: 0.6;"></i>
       
       <span>礼物</span>
+      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
     </a>
+    <ul class="sub-nav menus_item_child ">
+      
+      <li>
+        <a href="/aixin">
+          
+          <i class="fas fa-gift" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>爱心</span>
+        </a>
+      </li>
+      
+    </ul>
     
   </li>
   
@@ -365,12 +379,26 @@
         
         <li class="m-nav-item">
 	  
-		<a href="/leader" class="waves-effect waves-light">
+		<a href="javascript:;">
 			
-			    <i class="fa-fw fas fa-gift"></i>
+				<i class="fa-fw fas fa-gift"></i>
 			
 			礼物
+			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
 		</a>
+            <ul  style="background:  ;" >
+              
+                <li>
+
+                  <a href="/aixin " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-gift" style="position: absolute;left:50px" ></i>
+			      
+		          <span>爱心</span>
+                  </a>
+                </li>
+              
+            </ul>
           
         </li>
         
@@ -735,7 +763,7 @@
         },
         xAxis: {
             type: 'category',
-            data: ["2021-09","2021-10","2021-11","2021-12","2022-01","2022-02","2022-03","2022-04","2022-05","2022-06","2022-07","2022-08","2022-09"]
+            data: ["2021-11","2021-12","2022-01","2022-02","2022-03","2022-04","2022-05","2022-06","2022-07","2022-08","2022-09","2022-10","2022-11"]
         },
         yAxis: {
             type: 'value',
@@ -745,7 +773,7 @@
                 name: '文章篇数',
                 type: 'line',
                 color: ['#6772e5'],
-                data: [0,0,0,0,0,0,0,2,4,3,0,0,1],
+                data: [0,0,0,0,0,2,4,3,0,0,1,0,0],
                 markPoint: {
                     symbolSize: 45,
                     color: ['#fa755a','#3ecf8e','#82d3f4'],
