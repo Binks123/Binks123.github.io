@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="归档: 2022/5, 摇摇果冻">
-    <meta name="description" content="摇摇果冻">
+    <meta name="keywords" content="Vue几种传值方法, 摇摇果冻">
+    <meta name="description" content="总结一下最近学的Vue重要知识点--传值">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -30,7 +30,7 @@
     </style>
 
 
-    <title>归档: 2022/5 | 摇摇果冻</title>
+    <title>Vue几种传值方法 | 摇摇果冻</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -548,311 +548,362 @@
 
 </header>
 
-    <div class="bg-cover pd-header about-cover">
-    <div class="container">
-    <div class="row">
-    <div class="col s10 offset-s1 m8 offset-m2 l8 offset-l2">
-        <div class="brand">
-            <div class="title center-align">
-                
-                路上の猫尾草
-                
-            </div>
-
-            <div class="description center-align">
-                
-                <span id="subtitle"></span>
-                <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
-                <script>
-                    var typed = new Typed("#subtitle", {
-                        strings: [ 
-                            
-                                "从来没有真正的绝境, 只有心灵的迷途",
-                            
-                                "因为热爱，所以坚持",
-                            
-                        ],
-                        startDelay: 300,
-                        typeSpeed: 100,
-                        loop: true,
-                        backSpeed: 50,
-                        showCursor: true
-                    });
-                </script>
-                
-            </div>
-        </div>
-    </div>
-</div>
-
-
+    
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
 <script>
-    // 每天切换 banner 图.  Switch banner image every day.
-    var bannerUrl = "/medias/banner/" + new Date().getDay() + '.webp';
-    $('.bg-cover').css('background-image', 'url(' + bannerUrl + ')');
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
 </script>
 
 
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://ts1.cn.mm.bing.net/th/id/R-C.cf23526f451784ff137f161b8fe18d5a?rik=uRc79Zdc3WqE3g&riu=http%3a%2f%2fcn.vuejs.org%2fimages%2flogo.png&ehk=8XafiKLrGU2%2bN1KmeNwnWoHKkVgejAc65KVQK9IN2wk%3d&risl=&pid=ImgRaw&r=0')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">Vue几种传值方法</h1>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
-<main class="content">
+
+
+
+<main class="container content">
+
+    
+    <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Vue2/">
+                                <span class="chip bg-color">Vue2</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/Vue/" class="post-category">
+                                Vue
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2022-12-19
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2022-12-19
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    217
+                </div>
+                
+
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="Vue几种传值方法"><a href="#Vue几种传值方法" class="headerlink" title="Vue几种传值方法"></a>Vue几种传值方法</h1><p>正在学Vue，记录下三种传值方法。目前在学vue2准备参加蓝桥杯Web组，以下以vue2为例。</p>
+<h2 id="父传子"><a href="#父传子" class="headerlink" title="父传子"></a>父传子</h2><pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">//父组件
+&lt;Child :val="num"&gt;&lt;/Child&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">//子组件
+props:{
+	val:{
+		default:0,
+		type:Number
+	}
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="子传父"><a href="#子传父" class="headerlink" title="子传父"></a>子传父</h2><pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">//子组件
+//在触发事件时，比如触发复选框change事件
+&lt;input type="checked" @change="state_change"&gt;&lt;/input&gt;
+
+export default{
+	methods:{
+		state_change(){
+			this.$emit('stateChange',e.target.checked) //stateChange作为中间函数传给父组件
+		}
+	}
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">//父组件
+&lt;Child @stateChange="change"&gt;&lt;/Child&gt;
+
+export default{
+	methods:{
+		change(e){ //e是子组件传过来的数值
+			//接着就是执行函数了
+		}
+	}
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="兄弟传兄弟（祖孙也是）"><a href="#兄弟传兄弟（祖孙也是）" class="headerlink" title="兄弟传兄弟（祖孙也是）"></a>兄弟传兄弟（祖孙也是）</h2><pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">//兄弟A
+import bus from './evevtBus.js'
+
+export default{
+	data(){
+		return{
+			msg:'hello Vue'
+		}
+	},
+	methods:{
+		sendMsg(){
+			bus.$emis('share',this.msg)
+		}
+	}
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>引入eventBus.js</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">import</span> Vue <span class="token keyword">from</span> <span class="token string">"vue"</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">import bus from './evevtBus.js'
+
+export default{
+	data(){
+		return{
+			reviceMsg:''
+		}
+	},
+	created(){ //注意是created()
+		bus.$on('share',val=&gt;{
+			this.reviceMsg=val
+		})
+	}
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+                
+            </div>
+            <hr/>
+
+            
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/Vue2/">
+                                    <span class="chip bg-color">Vue2</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
 
     
 
     
 
-    <div id="cd-timeline" class="container">
+</div>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
         
-        <div class="cd-timeline-block">
-
-            
-            
-            
-            <div class="cd-timeline-img year" data-aos="zoom-in-up">
-                <a href="/archives/2022">2022</a>
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
             </div>
-            
-
-            
-            
-            
-            <div class="cd-timeline-img month" data-aos="zoom-in-up">
-                <a href="/archives/2022/05">05</a>
-            </div>
-            
-
-            
-            <div class="cd-timeline-img day" data-aos="zoom-in-up">
-                <span>24</span>
-            </div>
-            <article class="cd-timeline-content" data-aos="fade-up">
-                <div class="article col s12 m6">
-                    <div class="card">
-                        <a href="/post/6-xue-xi-xiao-wu/">
-                            <div class="card-image">
-                                
-                                <img src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fmmbiz.qpic.cn%2Fmmbiz_jpg%2Fia7E3qMRicX82tQFFEkWX10K7QgyANCMfYShozqiceRa9rUfM9h26655g3cFrhn3ZZSZqgTcp7sTc8OBEoYMTdPcg%2F640%3Fwx_fmt%3Djpeg&refer=http%3A%2F%2Fmmbiz.qpic.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1655965092&t=0a6b937568a8d3dd476092d744a2c2e5" class="responsive-img" alt="脚本的正确使用">
-                                
-                                <span class="card-title">脚本的正确使用</span>
-                            </div>
-                        </a>
-                        <div class="card-content article-content">
-                            <div class="summary block-with-text">
-                                
-                                    要密码找站长嘻嘻嘻
-                                
-                            </div>
-                            <div class="publish-info">
-                                <span class="publish-date">
-                                    <i class="far fa-clock fa-fw icon-date"></i>2022-05-24
-                                </span>
-                                <span class="publish-author">
-                                    
-                                    <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                    
-                                    <a href="/categories/%E5%90%8E%E8%8A%B1%E5%9B%AD/" class="post-category">
-                                    后花园
-                                    </a>
-                                    
-                                    
-                                </span>
-                            </div>
-                        </div>
-
+            <div class="card">
+                <a href="/post/11vue-ji-chong-chuan-zhi-fang-fa/">
+                    <div class="card-image">
                         
-                        <div class="card-action article-tags">
-                            
-                            <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%9A%84%E5%A5%BD%E5%B8%AE%E6%89%8B/"><span class="chip bg-color">学习的好帮手</span></a>
-                            
-                        </div>
+                        <img src="https://ts1.cn.mm.bing.net/th/id/R-C.cf23526f451784ff137f161b8fe18d5a?rik=uRc79Zdc3WqE3g&riu=http%3a%2f%2fcn.vuejs.org%2fimages%2flogo.png&ehk=8XafiKLrGU2%2bN1KmeNwnWoHKkVgejAc65KVQK9IN2wk%3d&risl=&pid=ImgRaw&r=0" class="responsive-img" alt="Vue几种传值方法">
+                        
+                        <span class="card-title">Vue几种传值方法</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            总结一下最近学的Vue重要知识点--传值
                         
                     </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-12-19
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Vue/" class="post-category">
+                                    Vue
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
                 </div>
-            </article>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Vue2/">
+                        <span class="chip bg-color">Vue2</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
         </div>
         
-        <div class="cd-timeline-block">
-
-            
-            
-
-            
-            
-
-            
-            <div class="cd-timeline-img day" data-aos="zoom-in-up">
-                <span>20</span>
-            </div>
-            <article class="cd-timeline-content" data-aos="fade-up">
-                <div class="article col s12 m6">
-                    <div class="card">
-                        <a href="/post/5-qian-duan-ru-men-zong-jie/">
-                            <div class="card-image">
-                                
-                                <img src="https://pic4.zhimg.com/v2-e11c2220bc3fcb328ce604c1441e8e5a_1440w.jpg?source=172ae18bcoverImg" class="responsive-img" alt="前端入门总结">
-                                
-                                <span class="card-title">前端入门总结</span>
-                            </div>
-                        </a>
-                        <div class="card-content article-content">
-                            <div class="summary block-with-text">
-                                
-                                    自己前端学习入门的感想
-                                
-                            </div>
-                            <div class="publish-info">
-                                <span class="publish-date">
-                                    <i class="far fa-clock fa-fw icon-date"></i>2022-05-20
-                                </span>
-                                <span class="publish-author">
-                                    
-                                    <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                    
-                                    <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
-                                    前端
-                                    </a>
-                                    
-                                    
-                                </span>
-                            </div>
-                        </div>
-
-                        
-                        <div class="card-action article-tags">
-                            
-                            <a href="/tags/HTML/"><span class="chip bg-color">HTML</span></a>
-                            
-                            <a href="/tags/CSS/"><span class="chip bg-color">CSS</span></a>
-                            
-                            <a href="/tags/JavaScript/"><span class="chip bg-color">JavaScript</span></a>
-                            
-                        </div>
-                        
-                    </div>
-                </div>
-            </article>
-        </div>
         
-        <div class="cd-timeline-block">
-
-            
-            
-
-            
-            
-
-            
-            <div class="cd-timeline-img day" data-aos="zoom-in-up">
-                <span>12</span>
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
-            <article class="cd-timeline-content" data-aos="fade-up">
-                <div class="article col s12 m6">
-                    <div class="card">
-                        <a href="/post/4hexo-da-jian-zhi-nan/">
-                            <div class="card-image">
-                                
-                                <img src="https://tse1-mm.cn.bing.net/th/id/R-C.bded13511fbf0bdd66b80dc5560e2d77?rik=HVpNyPo7wtSQ7A" class="responsive-img" alt="Hexo搭建指南">
-                                
-                                <span class="card-title">Hexo搭建指南</span>
-                            </div>
-                        </a>
-                        <div class="card-content article-content">
-                            <div class="summary block-with-text">
-                                
-                                    Hexo博客部署到Github基本流程
-                                
-                            </div>
-                            <div class="publish-info">
-                                <span class="publish-date">
-                                    <i class="far fa-clock fa-fw icon-date"></i>2022-05-12
-                                </span>
-                                <span class="publish-author">
-                                    
-                                    <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                    
-                                    <a href="/categories/Hexo/" class="post-category">
-                                    Hexo
-                                    </a>
-                                    
-                                    
-                                </span>
-                            </div>
-                        </div>
-
+            <div class="card">
+                <a href="/post/10-sui-bian-xie-xie/">
+                    <div class="card-image">
                         
-                        <div class="card-action article-tags">
-                            
-                            <a href="/tags/Hexo/"><span class="chip bg-color">Hexo</span></a>
-                            
-                            <a href="/tags/%E5%8D%9A%E5%AE%A2/"><span class="chip bg-color">博客</span></a>
-                            
-                        </div>
+                        <img src="https://ts1.cn.mm.bing.net/th/id/R-C.d3d10e524f2a137a596d464d38cf9c29?rik=2Wax4mxToD%2bEKA&riu=http%3a%2f%2f5b0988e595225.cdn.sohucs.com%2fimages%2f20190618%2fdd6f40200c1d4642befdac8124409ab4.jpeg&ehk=226LQQO1%2bTPdDmATo9%2bA6iOQ5JuLYJlThgj6n0%2fcm20%3d&risl=&pid=ImgRaw&r=0" class="responsive-img" alt="随便写写">
+                        
+                        <span class="card-title">随便写写</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            只是一个个人练习生
                         
                     </div>
-                </div>
-            </article>
-        </div>
-        
-        <div class="cd-timeline-block">
-
-            
-            
-
-            
-            
-
-            
-            <div class="cd-timeline-img day" data-aos="zoom-in-up">
-                <span>06</span>
-            </div>
-            <article class="cd-timeline-content" data-aos="fade-up">
-                <div class="article col s12 m6">
-                    <div class="card">
-                        <a href="/post/3-bai-piao-gong-ju/">
-                            <div class="card-image">
-                                
-                                <img src="https://tse1-mm.cn.bing.net/th/id/R-C.3c4fd65198cf5518cbd3905ebd699e4a?rik=HlDEwMruiNTi9A" class="responsive-img" alt="白嫖工具">
-                                
-                                <span class="card-title">白嫖工具</span>
-                            </div>
-                        </a>
-                        <div class="card-content article-content">
-                            <div class="summary block-with-text">
-                                
-                                    里面有PPT素材网站、壁纸网站链接、软件下载链接等
-                                
-                            </div>
-                            <div class="publish-info">
-                                <span class="publish-date">
-                                    <i class="far fa-clock fa-fw icon-date"></i>2022-05-06
-                                </span>
-                                <span class="publish-author">
-                                    
-                                    <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                    
-                                    <a href="/categories/%E7%99%BD%E5%AB%96/" class="post-category">
-                                    白嫖
-                                    </a>
-                                    
-                                    
-                                </span>
-                            </div>
-                        </div>
-
-                        
-                        <div class="card-action article-tags">
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-09-09
+                            </span>
+                        <span class="publish-author">
                             
-                            <a href="/tags/%E7%99%BD%E5%AB%96%E7%9C%9F%E9%A6%99/"><span class="chip bg-color">白嫖真香</span></a>
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                        </div>
-                        
+                            <a href="/categories/%E9%9A%8F%E7%AC%94/" class="post-category">
+                                    随笔
+                                </a>
+                            
+                            
+                        </span>
                     </div>
                 </div>
-            </article>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E9%9A%8F%E7%AC%94/">
+                        <span class="chip bg-color">随笔</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
         </div>
         
     </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    
 
 </main>
 
